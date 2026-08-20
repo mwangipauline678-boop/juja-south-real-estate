@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Juja South Estates helps you find, buy, rent, and sell quality homes and plots around Juja South, Juja, and nearby areas in Kenya."
+    />
+    <title>Juja South Estates | Homes &amp; Property in Juja South, Kenya</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Skip link for keyboard users -->
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="#home">
+          <img src="images/logo.svg" alt="" width="40" height="40" />
+          <span>
+            <strong>Juja South Estates</strong>
+            <small>Juja South, Kenya</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <p class="eyebrow">Trusted real estate in Kiambu County</p>
+          <h1>Find Your Dream Property in Juja South</h1>
+          <p class="hero-lead">
+            Juja South Estates helps families, students, and investors find
+            quality homes, maisonettes, and plots around Juja South, Juja, Kalimoni,
+            Theta, and neighbouring estates. We guide you from viewing to keys
+            in hand — with honest prices in Kenyan Shillings.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#properties">View Properties</a>
+            <a class="btn btn-outline" href="#contact">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH -->
+      <section class="search-section" id="search" aria-labelledby="search-heading">
+        <div class="container">
+          <div class="search-card">
+            <h2 id="search-heading">Search properties</h2>
+            <p>Filter by location, type, budget, and bedrooms to match what you need.</p>
+            <form class="search-form" id="searchForm">
+              <label>
+                Location
+                <select name="location" id="filterLocation">
+                  <option value="all">All locations</option>
+                  <option value="Juja South">Juja South</option>
+                  <option value="Juja">Juja</option>
+                  <option value="Kalimoni">Kalimoni</option>
+                  <option value="Theta">Theta</option>
+                  <option value="Witeithie">Witeithie</option>
+                </select>
+              </label>
+              <label>
+                Property type
+                <select name="type" id="filterType">
+                  <option value="all">All types</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Maisonette">Maisonette</option>
+                  <option value="Bungalow">Bungalow</option>
+                  <option value="Bedsitter">Bedsitter</option>
+                  <option value="Plot">Plot</option>
+                </select>
+              </label>
+              <label>
+                Price range
+                <select name="price" id="filterPrice">
+                  <option value="all">Any price</option>
+                  <option value="rent-low">Rent: up to KSh 25,000/month</option>
+                  <option value="rent-mid">Rent: KSh 25,001 – 40,000/month</option>
+                  <option value="sale-low">Sale: up to KSh 5,000,000</option>
+                  <option value="sale-high">Sale: above KSh 5,000,000</option>
+                </select>
+              </label>
+              <label>
+                Bedrooms
+                <select name="bedrooms" id="filterBedrooms">
+                  <option value="all">Any</option>
+                  <option value="0">Bedsitter / studio</option>
+                  <option value="1">1 bedroom</option>
+                  <option value="2">2 bedrooms</option>
+                  <option value="3">3 bedrooms</option>
+                  <option value="4">4+ bedrooms</option>
+                </select>
+              </label>
+              <button class="btn btn-primary search-btn" type="submit">Search</button>
+            </form>
+            <p class="search-status" id="searchStatus" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROPERTIES -->
+      <section class="section" id="properties">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="eyebrow">Listings around Juja South</p>
+            <h2>Featured properties</h2>
+            <p>
+              A mix of rentals and homes for sale, priced for the local market.
+              Click a card or View Details for full information.
+            </p>
+          </header>
+
+          <div class="property-grid" id="propertyGrid">
+            <!-- Cards are rendered by script.js from the listings data -->
+          </div>
+          <p class="empty-state" id="emptyState" hidden>
+            No properties match those filters. Try a wider location or price range.
+          </p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div class="about-image reveal">
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
+              alt="Keys being handed over on a new home"
+              width="1200"
+              height="800"
+            />
+          </div>
+          <div class="about-copy reveal">
+            <p class="eyebrow">About us</p>
+            <h2>A trusted local agency for Juja South and nearby estates</h2>
+            <p>
+              Juja South Estates is a community-rooted real estate firm serving
+              homeowners, tenants, and investors along Kenyatta Road, Kalimoni,
+              Theta, Witeithie, and greater Juja. We know which courts are quiet,
+              which blocks have reliable water, and how land values move around
+              JKUAT and the Thika Superhighway corridor.
+            </p>
+            <p>
+              Whether you want a bedsitter near campus, a family maisonette in
+              Juja South, or to sell a plot with proper paperwork, our team walks
+              with you through viewing, negotiation, and handover. We also manage
+              rental units for landlords who live outside Kiambu County.
+            </p>
+            <ul class="about-list">
+              <li>Help clients find homes that fit budget and lifestyle</li>
+              <li>Buy property with verified title and site visits</li>
+              <li>Sell property with honest pricing and local marketing</li>
+              <li>Rent property — tenants and landlords</li>
+              <li>Manage properties: rent collection, repairs, and tenant care</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section alt" id="services">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="eyebrow">What we do</p>
+            <h2>Our services</h2>
+            <p>End-to-end support whether you are renting, buying, selling, or investing.</p>
+          </header>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="icon" aria-hidden="true">🏠</div>
+              <h3>Property Buying</h3>
+              <p>
+                We shortlist homes and plots in Juja South that match your budget,
+                arrange viewings, and help you complete a clean purchase.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon" aria-hidden="true">🏷️</div>
+              <h3>Property Selling</h3>
+              <p>
+                Get a realistic market price, professional photos, and introductions
+                to serious buyers in Juja, Kalimoni, and nearby towns.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon" aria-hidden="true">🔑</div>
+              <h3>Property Rentals</h3>
+              <p>
+                From bedsitters to 3-bedroom maisonettes, we match tenants with
+                well-kept units and fair KSh monthly rents.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon" aria-hidden="true">📋</div>
+              <h3>Property Management</h3>
+              <p>
+                We collect rent, handle routine repairs, and keep occupancy high
+                so landlords can focus on other work.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon" aria-hidden="true">💬</div>
+              <h3>Real Estate Consultation</h3>
+              <p>
+                Need advice on title, rates, or whether a Juja South plot is a
+                sound buy? Book a consultation before you commit.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="icon" aria-hidden="true">📈</div>
+              <h3>Property Investment</h3>
+              <p>
+                We help you compare rental yields on apartments near JKUAT and
+                longer-term growth along Kenyatta Road and Theta.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section class="section" id="why-us">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="eyebrow">Why Juja South Estates</p>
+            <h2>Why customers choose us</h2>
+            <p>Local people, transparent pricing, and properties we have actually visited.</p>
+          </header>
+          <div class="why-grid">
+            <article class="why-card reveal">
+              <h3>Trusted local knowledge</h3>
+              <p>
+                Our agents live and work in Juja South. We know the murram roads,
+                the gated courts, and the estates that flood in long rains.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <h3>Affordable properties</h3>
+              <p>
+                Listings are priced for Kenyan households — from KSh 20,000 rentals
+                to family homes under KSh 10 million, not foreign-market figures.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <h3>Professional service</h3>
+              <p>
+                Clear communication, scheduled viewings, and paperwork explained
+                in plain language — in English or Kiswahili as you prefer.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <h3>Verified properties</h3>
+              <p>
+                We confirm ownership documents and visit units before they go on
+                this website, so you are not chasing ghost listings.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <h3>Customer support</h3>
+              <p>
+                Call or WhatsApp during working hours. After you move in, we remain
+                available for landlord or tenant follow-up.
+              </p>
+            </article>
+            <article class="why-card reveal">
+              <h3>Juja South and surroundings</h3>
+              <p>
+                Coverage includes Juja South, Juja town, Kalimoni, Theta, Witeithie,
+                and selected pockets along the Thika Superhighway.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section alt" id="testimonials">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="eyebrow">Client stories</p>
+            <h2>What our clients say</h2>
+          </header>
+          <div class="testimonial-grid">
+            <blockquote class="testimonial reveal">
+              <p>
+                “I was looking for a two-bedroom near Kenyatta Road without paying
+                Nairobi prices. The team showed me three units in one Saturday and
+                I signed the next week. Rent is KSh 20,000 and the caretaker is
+                reliable.”
+              </p>
+              <footer>
+                <strong>Faith Wanjiku</strong>
+                <span>Tenant, Juja South</span>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial reveal">
+              <p>
+                “Selling our plot in Kalimoni felt risky until Juja South Estates
+                checked the title and brought genuine buyers. We closed at a fair
+                KSh price, not the inflated figures we had seen online.”
+              </p>
+              <footer>
+                <strong>Peter Mwangi</strong>
+                <span>Seller, Kalimoni</span>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial reveal">
+              <p>
+                “As a JKUAT parent, I needed a bedsitter that was safe for my
+                daughter. They did not rush me. The place in Juja has water, a
+                proper gate, and the landlord is known to them.”
+              </p>
+              <footer>
+                <strong>Grace Achieng</strong>
+                <span>Parent &amp; tenant, Juja</span>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial reveal">
+              <p>
+                “I live in Mombasa and they manage my two maisonettes in Theta.
+                Rent comes in on time and I get a simple monthly report. That
+                peace of mind is worth the management fee.”
+              </p>
+              <footer>
+                <strong>Hassan Omar</strong>
+                <span>Landlord, Theta</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOCATION -->
+      <section class="section" id="location">
+        <div class="container location-grid">
+          <div class="reveal">
+            <p class="eyebrow">Visit or call us</p>
+            <h2>Juja South, Kenya</h2>
+            <p>
+              Our office is in Juja South, a short drive from Juja town and the
+              Thika Superhighway. Viewings are by appointment across Juja South,
+              Kalimoni, Theta, and Witeithie.
+            </p>
+            <ul class="contact-facts">
+              <li><strong>Location:</strong> Juja South, Kiambu County, Kenya</li>
+              <li><strong>Phone:</strong> <a href="tel:+254743667190">+254 743 667 190</a></li>
+              <li><strong>Email:</strong> <a href="mailto:mwangipauline678@gmail.com">mwangipauline678@gmail.com</a></li>
+              <li><strong>Hours:</strong> Mon–Sat, 8:00 AM – 6:00 PM EAT</li>
+            </ul>
+          </div>
+          <div class="map-wrap reveal">
+            <!-- OpenStreetMap embed for Juja; replace with Google Maps later if needed -->
+            <iframe
+              title="Map of Juja South, Kenya"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=36.97,-1.13,37.05,-1.07&amp;layer=mapnik&amp;marker=-1.102,37.013"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p class="map-note">
+              Map centred on Juja. You can later swap this iframe for a Google Maps
+              embed of your exact office pin.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="container contact-grid">
+          <div class="reveal">
+            <p class="eyebrow">Get in touch</p>
+            <h2>Send an inquiry</h2>
+            <p>
+              Tell us what you are looking for and we will reply on the same
+              working day. For urgent viewings, call
+              <a href="tel:+254743667190">+254 743 667 190</a>
+              (0743667190).
+            </p>
+            <p class="office-note">
+              Office: Juja South, Kenya<br />
+              Email: mwangipauline678@gmail.com
+            </p>
+          </div>
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <label>
+              Name
+              <input type="text" name="name" id="contactName" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" id="contactEmail" autocomplete="email" required />
+            </label>
+            <label>
+              Phone number
+              <input
+                type="tel"
+                name="phone"
+                id="contactPhone"
+                autocomplete="tel"
+                placeholder="+254 7XX XXX XXX"
+                required
+              />
+            </label>
+            <label>
+              Property type
+              <select name="propertyType" id="contactPropertyType" required>
+                <option value="">Select a type</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Maisonette">Maisonette</option>
+                <option value="Bungalow">Bungalow</option>
+                <option value="Bedsitter">Bedsitter</option>
+                <option value="Plot">Plot</option>
+                <option value="Other">Not sure yet</option>
+              </select>
+            </label>
+            <label class="full">
+              Message
+              <textarea name="message" id="contactMessage" rows="5" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Inquiry</button>
+            <p class="form-feedback" id="formFeedback" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <img src="images/logo.svg" alt="" width="40" height="40" />
+            <span><strong>Juja South Estates</strong></span>
+          </div>
+          <p>
+            Helping Kenyans find, buy, rent, and sell homes around Juja South
+            with honest advice and verified listings.
+          </p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>Juja South, Kenya</li>
+            <li><a href="mailto:mwangipauline678@gmail.com">mwangipauline678@gmail.com</a></li>
+            <li><a href="tel:+254743667190">+254 743 667 190</a></li>
+            <li>0743667190</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Follow us</h3>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">x</a>
+            <a href="https://wa.me/254743667190" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">Site by Pauline Mwangi</p>
+    </footer>
+
+    <!-- PROPERTY MODAL -->
+    <div class="modal" id="propertyModal" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close details">&times;</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
